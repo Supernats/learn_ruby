@@ -32,8 +32,7 @@ end
 
 def factorial(num)
 	out = 1
-	nums = Array (1..num)
-	nums.each do |i|
+	(1..num).each do |i|
 		out *= i
 	end
 	out
