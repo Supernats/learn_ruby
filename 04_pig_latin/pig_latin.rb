@@ -13,6 +13,8 @@ end
 
 
 def translate_word(word)
+	punc = word.scan(/[\!\,\.\:\;]/).join
+	word.sub!(punc,"")
 	arr = word.split("")
 	swap = ""
 	arr.each_with_index do |letter, idx|
@@ -26,7 +28,14 @@ def translate_word(word)
 		end
 	end
 	swap.length.times { arr.shift }
-	word = arr.join + "#{swap}ay"
+	word = arr.join + "#{swap}ay#{punc}"
+	pig_capital(word)
 end
 
-#def capitalize(word)
+def pig_capital(word)
+	if word.scan(/[A-Z]/).count > 0
+		word.downcase.capitalize
+	else
+		word
+	end
+end

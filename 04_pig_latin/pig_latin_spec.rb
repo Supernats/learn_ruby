@@ -73,7 +73,7 @@ describe "#translate" do
 
   it "capitalizes properly" do
     s = translate("We love the Football Association")
-    s.should == "Eway ovelay the Ootballfay Associationay"
+    s.should == "Eway ovelay ethay Ootballfay Associationay"
   end
 
   it "retains punctuation" do
