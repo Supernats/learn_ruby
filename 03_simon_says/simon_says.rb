@@ -26,13 +26,15 @@ def first_word(message)
 	words[0]
 end
 
+LITTLE_WORDS = ["and", "the", "over"]
+
 def titleize(message)
 	words = message.split
 	words.each_with_index do |word, idx|
 		# Following code kinda sucks, come back later and:
 		# Add a database of "little words."" Refactor to do a check against it
 		# to DRY up the code and allow for more exception words.
-		if word == "and" || word == "the" || word == "over"
+		if LITTLE_WORDS.include?(word)
 			next unless idx == 0
 		end
 		word.capitalize!
