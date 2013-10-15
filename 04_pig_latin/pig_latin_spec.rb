@@ -65,8 +65,20 @@ describe "#translate" do
     s.should == "ethay ickquay ownbray oxfay"
   end
 
-  # Test-driving bonus:
-  # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
-  # * retain the punctuation from the original phrase
+=begin
+   Test-driving bonus:
+   * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
+   * retain the punctuation from the original phrase
+=end
+
+  it "capitalizes properly" do
+    s = translate("We love the Football Association")
+    s.should == "Eway ovelay the Ootballfay Associationay"
+  end
+
+  it "retains punctuation" do
+    s = translate("Stop! In the name of love.")
+    s.should == "Opstay! Inay ethay amenay ofay ovelay."
+  end
 
 end

@@ -19,7 +19,7 @@ def translate_word(word)
 		if letter == "u" && arr[idx - 1] == "q"
 			swap += letter
 		end
-		if VOWELS.include?(letter)
+		if letter.match(/[AEIOU]/i)
 			break
 		else
 			swap += letter
@@ -28,3 +28,5 @@ def translate_word(word)
 	swap.length.times { arr.shift }
 	word = arr.join + "#{swap}ay"
 end
+
+#def capitalize(word)
